@@ -8,12 +8,11 @@ WHERE ShipperName = "Speedy Express";
 -- What is the last name of the employee with the most orders?
 
 SELECT LastName,
-		COUNT(*) AS Total_Orders
+	   COUNT(*) AS Total_Orders
 FROM Employees
 JOIN Orders ON Employees.EmployeeID = Orders.EmployeeID
 GROUP BY Employees.EmployeeID
-ORDER BY  DESC
-LIMIT 1;
+ORDER BY Total_Orders DESC
 
 -- What product was ordered the most by customers in Germany?
 SELECT ProductName, 
